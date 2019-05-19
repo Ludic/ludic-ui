@@ -1,0 +1,35 @@
+{
+  "name": "ludic-ui",
+  "version": "1.0.0",
+  "description": "ludic ui extension",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --watch --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ludic/ludic-ui.git"
+  },
+  "keywords": [
+    "ludic",
+    "lit-html"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ludic/ludic-ui/issues"
+  },
+  "homepage": "https://github.com/Ludic/ludic-ui#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "lit-html": "^1.0.0"
+  }
+}
