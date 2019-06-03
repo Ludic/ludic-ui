@@ -2,7 +2,8 @@
   "name": "ludic-ui",
   "version": "1.0.0",
   "description": "ludic ui extension",
-  "main": "index.js",
+  "main": "dist/ludic.ext.ui.commonjs2.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "webpack --watch --config ./webpack.config.js",
     "build": "webpack --config ./webpack.config.js",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/Ludic/ludic-ui#readme",
   "devDependencies": {
+    "@ludic/ludic": "github:Ludic/ludic",
     "awesome-typescript-loader": "^5.2.1",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.4.5",
@@ -31,5 +33,8 @@
   },
   "dependencies": {
     "lit-html": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@ludic/ludic": "github:Ludic/ludic"
   }
 }
