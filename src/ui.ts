@@ -1,6 +1,9 @@
 import { UIComponent } from './component'
-import { render } from 'lit-html'
 import Ludic from '@ludic/ludic'
+
+export interface RenderFunction {
+  (comp: UIComponent, container: HTMLElement): void
+}
 
 export class LudicUI {
 
@@ -49,10 +52,11 @@ export class LudicUI {
     }
   }
 
-  render(){
-    for(let comp of this.componentList.values()){
+  update(render: RenderFunction){
+    const components = this.componentList.values()
+    for(let comp of components){
       if(comp.enabled){
-        render(comp.render(), this.container)
+        render(comp, this.container)
       }
     }
   }

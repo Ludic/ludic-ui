@@ -1,9 +1,8 @@
-import { TemplateResult } from 'lit-html'
 
 export abstract class UIComponent {
 
-  enabled: boolean = false
+  enabled: boolean = true
 
-  abstract render(): TemplateResult
+  abstract render<F extends (...args: any) => any>(h: (...args: Parameters<F>)=>ReturnType<F>): ReturnType<F>
 
 }

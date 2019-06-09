@@ -1,5 +1,5 @@
 import { LudicConstructor } from '@ludic/ludic'
-import { LudicUI } from './ui'
+import { LudicUI, RenderFunction } from './ui'
 
 declare module '@ludic/ludic/dist/core/app' {
   interface LudicConstructor {
@@ -7,10 +7,19 @@ declare module '@ludic/ludic/dist/core/app' {
   }
 }
 
-export default function plugin(app: LudicConstructor) {
-  console.log('install ludic ui')
+export interface LudicUIOptions {
+  render: RenderFunction
+}
+
+export function install(app: LudicConstructor, {render}: LudicUIOptions) {
   app.ui = new LudicUI(app as any)
   app.registerUpdateFunction(function(){
-    app.ui.render()
+    app.ui.update(render)
   })
+}
+
+export function plugin(opts: LudicUIOptions){
+  return function (app: LudicConstructor) {
+    install(app, opts)
+  }
 }
