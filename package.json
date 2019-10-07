@@ -1,5 +1,5 @@
 {
-  "name": "ludic-ui",
+  "name": "@ludic/ludic-ui",
   "version": "1.0.0",
   "description": "ludic ui extension",
   "main": "dist/ludic.ext.ui.commonjs2.js",
